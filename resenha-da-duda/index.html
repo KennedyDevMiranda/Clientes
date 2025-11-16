@@ -1,55 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Codificação de caracteres -->
     <meta charset="UTF-8">
+
+    <!-- Responsivo no celular -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compatibilidade com navegadores antigos -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Título da aba -->
     <title>Resenhas da Duda</title>
-    <!-- Link para CSS externo -->
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Descrição para buscadores -->
+    <meta name="description" content="Aqui você encontra as melhores resenhas.">
+
+    <!-- Open Graph (quando compartilhar o link) -->
+    <meta property="og:title" content="Resenhas da Duda">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seu-dominio-aqui.com">
+    <meta property="og:description" content="Aqui você encontra as melhores resenhas.">
+    <meta property="og:image" content="https://seu-dominio-aqui.com/img/capa-site.jpg">
+
+    <!-- Favicon (ícone da aba) -->
+    <link rel="icon" href="img/favicon.ico">
+
+    <!-- Fonte com cara de livro -->
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700&display=swap" rel="stylesheet">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="site-header">
+    <!-- CABEÇALHO DO SITE -->
+    <header class="site-header" id="topo">
         <div class="container">
             <h1>Resenhas da Duda</h1>
             <p class="tagline">Aqui você encontra as melhores resenhas</p>
-            <p class="credits">Criado para vendas da <a href="https://instagram.com/bookstore.livraria.perfum_bsf" target="_blank">@bookstore.livraria.perfum_bsf</a> • Administrador: Duntx.mduda</p>
+            <p class="credits">
+                Criado para vendas da
+                <a href="https://instagram.com/bookstore.livraria.perfum_bsf" target="_blank">
+                    @bookstore.livraria.perfum_bsf
+                </a>
+                • Administrador: Duntx.mduda
+            </p>
         </div>
     </header>
 
+    <!-- MENU DE NAVEGAÇÃO -->
     <nav class="site-nav">
         <div class="container">
             <ul>
-                <li><a href="#resenha-mulherzinhas">Mulherzinhas – Adoráveis Mulheres</a></li>
-                <li><a href="#resenha-acotar">A Corte de Espinhos e Rosas</a></li>
+                <li><a href="#mulherzinhas">Mulherzinhas – Adoráveis Mulheres</a></li>
+                <li><a href="#acotar">A Corte de Espinhos e Rosas</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="site-main container">
-        <section id="resenha-mulherzinhas" class="resenha">
-            <h2>Mulherzinhas – Adoráveis Mulheres</h2>
-            <h3>Louisa May Alcott</h3>
-            <p>A obra … (texto da resenha original) …</p>
-            <div class="imagem">
-                <img src="caminho/para/imagem1.jpg" alt="Capa de Mulherzinhas">
-            </div>
-        </section>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="site-main">
+        <div class="container">
 
-        <section id="resenha-acotar" class="resenha">
-            <h2>A Corte de Espinhos e Rosas</h2>
-            <h3>Sarah J. Maas</h3>
-            <p>Depois de anos sendo escravizados … (texto da resenha) …</p>
-            <div class="imagem">
-                <img src="caminho/para/imagem2.jpg" alt="Capa de A Corte de Espinhos e Rosas">
+            <!-- RESENHA 1: MULHERZINHAS -->
+            <section id="mulherzinhas" class="resenha">
+                <header class="resenha-header">
+                    <h2>Mulherzinhas – Adoráveis Mulheres</h2>
+                    <p class="autor">Louisa May Alcott</p>
+                </header>
+
+                <div class="resenha-content">
+                    <div class="resenha-texto">
+                        <!-- COLE AQUI O TEXTO DA RESENHA ORIGINAL DE MULHERZINHAS -->
+                        <p>
+                            Nesta resenha, Duda apresenta a história das quatro irmãs March,
+                            falando sobre amadurecimento, família, afetos e o papel das mulheres
+                            em um contexto histórico rígido e cheio de expectativas sociais.
+                        </p>
+                    </div>
+
+                    <figure class="resenha-imagem">
+                        <img src="img/mulherzinhas.jpg" alt="Capa do livro Mulherzinhas – Adoráveis Mulheres">
+                        <figcaption>Capa de "Mulherzinhas – Adoráveis Mulheres"</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- RESENHA 2: ACOTAR -->
+            <section id="acotar" class="resenha">
+                <header class="resenha-header">
+                    <h2>A Corte de Espinhos e Rosas</h2>
+                    <p class="autor">Sarah J. Maas</p>
+                </header>
+
+                <div class="resenha-content">
+                    <div class="resenha-texto">
+                        <!-- COLE AQUI O TEXTO DA RESENHA ORIGINAL DE ACOTAR -->
+                        <p>
+                            Nesta resenha, Duda comenta o mundo dividido entre humanos e feéricos,
+                            o antigo tratado que separa os povos e como uma decisão muda o destino
+                            da protagonista, misturando romance, política e maldições.
+                        </p>
+
+                        <h3>Curiosidades</h3>
+                        <ul>
+                            <li>Adicione aqui curiosidades que já estão na resenha original.</li>
+                            <li>Inclua detalhes sobre o processo de escrita, universo ou personagens.</li>
+                        </ul>
+
+                        <h3>Opinião da Duda</h3>
+                        <p>
+                            Use este espaço para a parte mais pessoal: pontos fortes, críticas,
+                            personagens preferidos, cenas marcantes e tudo aquilo que a Duda já
+                            comentou na resenha original.
+                        </p>
+                    </div>
+
+                    <figure class="resenha-imagem">
+                        <img src="img/acotar.jpg" alt="Capa do livro A Corte de Espinhos e Rosas">
+                        <figcaption>Capa de "A Corte de Espinhos e Rosas"</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- BOTÃO VOLTAR AO TOPO -->
+            <div class="voltar-topo">
+                <a href="#topo">↑ Voltar ao topo</a>
             </div>
-            <h4>Curiosidades:</h4>
-            <ul>
-                <li>Sarah escreveu o primeiro livro …</li>
-                <li>…</li>
-            </ul>
-        </section>
+
+        </div>
     </main>
 
+    <!-- RODAPÉ -->
     <footer class="site-footer">
         <div class="container">
             <p>© 2025 Resenhas da Duda. Todos os direitos reservados.</p>
