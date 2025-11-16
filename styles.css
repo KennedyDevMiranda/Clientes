@@ -1,0 +1,125 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.site-header {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.site-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.site-header .tagline {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.site-header .credits {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.site-nav {
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.site-nav ul li {
+    margin-right: 20px;
+}
+
+.site-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.site-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.site-main .resenha {
+    background-color: #fff;
+    margin-20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.site-main .resenha h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.site-main .resenha h3 {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.site-main .resenha .imagem {
+    text-align: center;
+    margin-20px 0; /* deve ser margin: 20px 0; */
+}
+
+.site-main .resenha .imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.site-main .resenha h4 {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #444;
+}
+
+.site-main .resenha ul {
+    margin-10px 0; /* corrigir: margin: 10px 0; */
+    padding-left: 20px;
+}
+
+.site-main .resenha ul li {
+    margin-bottom: 8px;
+}
+
+.site-footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+}
+
+.site-footer p {
+    font-size: 0.9em;
+    color: #777;
+}
