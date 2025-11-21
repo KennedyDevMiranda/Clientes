@@ -3,59 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Pet - PetShop e Clínica Veterinária</title>
+    <title>PetLove - Pet Shop</title>
 
     <style>
-        /* Zerando margens padrão do navegador */
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Corpo da página */
-        body{
+        body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f5f5f5;
             color: #333;
         }
 
-        /* Área central com largura máxima */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 16px;
         }
 
-        /* Cabeçalho */
-        header{
+        header {
             background-color: #ffcc66;
             padding: 12px 0;
         }
 
-        .logo{
+        .logo {
             font-size: 24px;
             font-weight: bold;
         }
 
-        /* Menu de navegação */
-        nav{
+        nav {
             margin-top: 8px;
         }
 
-        nav a{
+        nav a {
             margin-right: 16px;
             text-decoration: none;
             color: #333;
             font-weight: bold;
         }
 
-        nav a:hover{
+        nav a:hover {
             text-decoration: underline;
         }
 
-        /* Seção principal (hero) */
-        .hero{
+        .hero {
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -64,18 +58,23 @@
             padding: 32px 0;
         }
 
-        .hero-text p{
+        .hero-text h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .hero-text p {
             font-size: 18px;
             margin-bottom: 16px;
         }
 
-        .hero img{
+        .hero img {
             width: 100%;
             max-width: 400px;
             border-radius: 12px;
         }
 
-        .btn{
+        .btn {
             display: inline-block;
             padding: 10px 20px;
             border-radius: 24px;
@@ -86,36 +85,110 @@
             cursor: pointer;
         }
 
-        .btn:hover{
+        .btn:hover {
             opacity: 0.9;
         }
 
-        /* Seção de serviços */
-        .section-title{
+        .section-title {
             font-size: 24px;
-            margin-bottom: 16px;
+            margin: 24px 0 16px;
             text-align: center;
         }
 
-        .cards{
+        .cards {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
 
-        .card{
+        .card {
             background-color: white;
             padding: 16px;
             border-radius: 12px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .card h3{
+        .card h3 {
             margin-bottom: 8px;
         }
 
-        /* Rodapé */
-        footer{
+        /* 🔹 PRODUTOS */
+        .products-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .product-card {
+            background-color: white;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        /* 🔹 FORMULÁRIO DE CONTATO */
+        .contact-form {
+            background-color: white;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* 🔹 BOTÃO FLUTUANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            font-size: 14px;
+        }
+
+        .whatsapp-float:hover {
+            opacity: 0.9;
+        }
+
+        footer {
             margin-top: 32px;
             padding: 16px 0;
             text-align: center;
@@ -124,23 +197,30 @@
             font-size: 14px;
         }
 
-        /* RESPONSIVIDADE: quando a tela for maior que 768px */
-        @media(min-width: 768px){
-            .hero{
+        @media (min-width: 768px) {
+            .hero {
                 flex-direction: row;
                 text-align: left;
                 justify-content: space-between;
             }
 
-            .hero-text{
+            .hero-text {
                 max-width: 50%;
             }
 
-            .cards{
+            .cards {
                 flex-direction: row;
             }
 
-            .card{
+            .card {
+                flex: 1;
+            }
+
+            .products-grid {
+                flex-direction: row;
+            }
+
+            .product-card {
                 flex: 1;
             }
         }
@@ -150,7 +230,7 @@
     <!-- CABEÇALHO -->
     <header>
         <div class="container">
-            <div class="logo">Casa Pet🐾</div>
+            <div class="logo">PetLove 🐾</div>
 
             <nav>
                 <a href="#servicos">Serviços</a>
@@ -161,20 +241,20 @@
     </header>
 
     <!-- CONTEÚDO PRINCIPAL -->
-     <main class="container">
+    <main class="container">
         <!-- HERO -->
-         <section class="hero">
+        <section class="hero">
             <div class="hero-text">
                 <h1>Cuidamos do seu pet com amor</h1>
-                <p>Banho, tosa, consultas e tudo que seu melhor amigo precisa em só um lugar.</p>
+                <p>Banho, tosa, consultas e tudo que seu melhor amigo precisa em um só lugar.</p>
                 <button class="btn">Agendar atendimento</button>
             </div>
 
-            <img src="img/CasaPet.png" alt="Cachorro e gato felizes no pet shop">
-         </section>
+            <img src="https://placehold.co/400x300?text=Pet+Shop" alt="Cachorro e gato felizes no pet shop">
+        </section>
 
-         <!-- SERVIÇOS -->
-          <section id="serviços">
+        <!-- SERVIÇOS -->
+        <section id="servicos">
             <h2 class="section-title">Nossos serviços</h2>
 
             <div class="cards">
@@ -193,12 +273,62 @@
                     <p>Rações, brinquedos, acessórios e tudo que seu pet merece.</p>
                 </div>
             </div>
-          </section>
-     </main>
+        </section>
 
-     <!-- RODAPÉ -->
-      <footer>
-        Casa Pet - PetShop • Av. Edson Henrique Pereira, 766, Centro, Barra de São Francisco 29800-000 • (27) 99803-6966
-      </footer>
+        <!-- PRODUTOS -->
+        <section id="produtos">
+            <h2 class="section-title">Produtos em destaque</h2>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-title">Ração Premium Cães Adultos</div>
+                    <p>Ração de alta qualidade para manter seu cão saudável e cheio de energia.</p>
+                    <div class="product-price">R$ 129,90</div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-title">Ração Gatos Castrados</div>
+                    <p>Fórmula especial para gatos castrados, ajuda a controlar o peso.</p>
+                    <div class="product-price">R$ 89,90</div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-title">Kit Brinquedos Pet</div>
+                    <p>Pacote com 5 brinquedos para divertir seu pet o dia todo.</p>
+                    <div class="product-price">R$ 59,90</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO / FORMULÁRIO -->
+        <section id="contato">
+            <h2 class="section-title">Fale com a gente</h2>
+
+            <form class="contact-form" method="post" action="#">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" required>
+
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" required>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a class="whatsapp-float"
+       href="https://api.whatsapp.com/send?phone=5527 99803-6966&text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20para%20meu%20pet."
+       target="_blank">
+        Falar no WhatsApp
+    </a>
+
+    <!-- RODAPÉ -->
+    <footer>
+        PetLove Pet Shop • Rua dos Bichinhos, 123 • (11) 99999-9999
+    </footer>
 </body>
 </html>
