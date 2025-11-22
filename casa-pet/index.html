@@ -326,6 +326,29 @@
         Falar no WhatsApp
     </a>
 
+    <form class="contact-form" onsubmit="enviarContato(event)">
+    <!-- campos... -->
+    </form>
+
+    <script>
+        async function enviarContato(event) {
+            event.preventDefault(); // impede o recarregamento da página
+
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const mensagem = document.getElementById("mensagem").value;
+
+            const resposta = await fetch("/api/contato", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nome, email, mensagem })
+            });
+
+            const dados = await resposta.json();
+            alert(dados.mensagem);
+        }
+    </script>
+
     <!-- RODAPÉ -->
     <footer>
         Casa Pet - PetShop • Av. Edson Henrique Pereira, 766, Centro, Barra de São Francisco 29800-000 • (27) 99803-6966
