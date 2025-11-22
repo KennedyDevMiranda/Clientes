@@ -1,9 +1,370 @@
-<form onsubmit="login(event)">
-    <label for="email">E-mail</label>
-    <input id="email" type="email" required>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Pet - Pet Shop e Clínica Veterinária</title>
 
-    <label for="senha">Senha</label>
-    <input id="senha" type="password" required>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <button type="submit" class="btn">Entrar</button>
-</form>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        header {
+            background-color: #ffcc66;
+            padding: 12px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            margin-top: 8px;
+        }
+
+        nav a {
+            margin-right: 16px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            text-align: center;
+            padding: 32px 0;
+        }
+
+        .hero-text h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 24px;
+            border: none;
+            background-color: #ff8800;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin: 24px 0 16px;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+        }
+
+        /* 🔹 PRODUTOS */
+        .products-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .product-card {
+            background-color: white;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        /* 🔹 FORMULÁRIO DE CONTATO */
+        .contact-form {
+            background-color: white;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* 🔹 BOTÃO FLUTUANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            font-size: 14px;
+        }
+
+        .whatsapp-float:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            margin-top: 32px;
+            padding: 16px 0;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            font-size: 14px;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                flex-direction: row;
+                text-align: left;
+                justify-content: space-between;
+            }
+
+            .hero-text {
+                max-width: 50%;
+            }
+
+            .cards {
+                flex-direction: row;
+            }
+
+            .card {
+                flex: 1;
+            }
+
+            .products-grid {
+                flex-direction: row;
+            }
+
+            .product-card {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container">
+            <div class="logo">Casa Pet 🐾</div>
+
+            <nav>
+                <a href="#servicos">Serviços</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Cuidamos do seu pet com amor</h1>
+                <p>Banho, tosa, consultas e tudo que seu melhor amigo precisa em um só lugar.</p>
+                <button class="btn">Agendar atendimento</button>
+            </div>
+
+            <img src="img/CasaPet.png" alt="Cachorro e gato felizes no pet shop">
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="servicos">
+            <h2 class="section-title">Nossos serviços</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Banho & Tosa</h3>
+                    <p>Higiene completa com produtos especiais para cada tipo de pelagem.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Veterinário</h3>
+                    <p>Consultas, vacinas e acompanhamento com profissionais especializados.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Pet Shop</h3>
+                    <p>Rações, brinquedos, acessórios e tudo que seu pet merece.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUTOS -->
+        <section id="produtos">
+            <h2 class="section-title">Produtos em destaque</h2>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-title">Ração Premium Cães Adultos</div>
+                    <p>Ração de alta qualidade para manter seu cão saudável e cheio de energia.</p>
+                    <div class="product-price">R$ 129,90</div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-title">Ração Gatos Castrados</div>
+                    <p>Fórmula especial para gatos castrados, ajuda a controlar o peso.</p>
+                    <div class="product-price">R$ 89,90</div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-title">Kit Brinquedos Pet</div>
+                    <p>Pacote com 5 brinquedos para divertir seu pet o dia todo.</p>
+                    <div class="product-price">R$ 59,90</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO / FORMULÁRIO -->
+        <section id="contato">
+            <h2 class="section-title">Fale com a gente</h2>
+            <!--
+            <form class="contact-form" method="post" action="#">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" required>
+
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" required>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+
+                <button type="submit" class="btn">Enviar</button>
+            </form> -->
+        </section>
+    </main>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a class="whatsapp-float"
+       href="https://api.whatsapp.com/send?phone=5527995045666&text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20para%20meu%20pet."
+       target="_blank">
+        Falar no WhatsApp
+    </a>
+
+    <form class="contact-form" onsubmit="enviarContato(event)">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" required>
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+
+        <button type="submit" class="btn">Enviar</button>
+    </form>
+
+    <!-- RODAPÉ -->
+    <footer>
+        Casa Pet - PetShop • Av. Edson Henrique Pereira, 766, Centro, Barra de São Francisco 29800-000 • (27) 99803-6966
+    </footer>
+
+    <script>
+        function enviarContato(event) {
+            // impede o envio "real" do formulário (não faz POST)
+            event.preventDefault();
+
+            // pega os valores digitados
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const mensagem = document.getElementById("mensagem").value;
+
+            // aqui você poderia mandar para uma API, por enquanto só vamos simular
+            console.log("Contato:", { nome, email, mensagem });
+
+            alert("Recebemos sua mensagem, " + nome + "! Logo entraremos em contato pelo e-mail " + email + ".");
+
+            // limpa o formulário
+            document.getElementById("nome").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("mensagem").value = "";
+        }
+    </script>
+
+</body>
+</html>
