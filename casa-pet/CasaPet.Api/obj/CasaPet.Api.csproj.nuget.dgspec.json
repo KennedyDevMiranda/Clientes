@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/Clientes/CasaPet.Api/CasaPet.Api.csproj": {}
+    "/workspaces/Clientes/casa-pet/CasaPet.Api/CasaPet.Api.csproj": {}
   },
   "projects": {
-    "/workspaces/Clientes/CasaPet.Api/CasaPet.Api.csproj": {
+    "/workspaces/Clientes/casa-pet/CasaPet.Api/CasaPet.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/Clientes/CasaPet.Api/CasaPet.Api.csproj",
+        "projectUniqueName": "/workspaces/Clientes/casa-pet/CasaPet.Api/CasaPet.Api.csproj",
         "projectName": "CasaPet.Api",
-        "projectPath": "/workspaces/Clientes/CasaPet.Api/CasaPet.Api.csproj",
+        "projectPath": "/workspaces/Clientes/casa-pet/CasaPet.Api/CasaPet.Api.csproj",
         "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/Clientes/CasaPet.Api/obj/",
+        "outputPath": "/workspaces/Clientes/casa-pet/CasaPet.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/codespace/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gvBTPXXZhcQ=",
+  "dgSpecHash": "RYHAbR6fRUc=",
   "success": true,
-  "projectFilePath": "/workspaces/Clientes/CasaPet.Api/CasaPet.Api.csproj",
+  "projectFilePath": "/workspaces/Clientes/casa-pet/CasaPet.Api/CasaPet.Api.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
