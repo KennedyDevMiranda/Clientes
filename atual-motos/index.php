@@ -1,3 +1,21 @@
+<?php
+if(isset($_POST['submit']))
+    {
+    print_r('Nome: ' . $_POST['nome']);
+    print_r('<br>');
+    print_r('Telefone: ' . $_POST['telefone']);
+    print_r('<br>');
+    print_r('Placa: '. $_POST['placa']);
+    print_r('<br>');
+    print_r('Serviços: ' . $_POST['servico']);
+    print_r('<br>');
+    print_r('Data desejada: ' . $_POST['data']);
+    print_r('<br>');
+    print_r('Obs: ' . $_POST['mensagem']);
+    print_r('<br>');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -109,7 +127,7 @@
             <p class="subtitulo">Preencha os dados e retornaremos o mais rápido possível.</p>
 
             <div class="contato-grid">
-                <form class="form-contato">
+                <form action="index.php" method="POST" class="form-contato">
                     <div class="campo-form">
                         <label for="nome">Nome*</label>
                         <input type="text" id="nome" required>
