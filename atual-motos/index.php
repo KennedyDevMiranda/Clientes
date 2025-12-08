@@ -3,14 +3,16 @@
     {
         include_once('config.php');
 
-        $nome = $_POST['nome'];
-        $telefone = $_POST['telefone'];
-        $placa = $_POST['placa'];
-        $servico = $_POST['servico'];
-        $data = $_POST['data'];
-        $mensagem = $_POST['mensagem'];
+        $nome = $_POST['Nome'];
+        $telefone = $_POST['Telefone'];
+        $placa = $_POST['Placa'];
+        $servico = $_POST['Servico'];
+        $data = $_POST['DataDesejada'];
+        $mensagem = $_POST['Mensagem'];
+        $data = $_POST['DataRegistro'];
+        $mensagem = $_POST['Status'];
 
-        $result = mysqli_query($conexao, "INSERT INTO agendamentos(nome,telefone,placa,servico,data,mensagem)
+        $result = mysqli_query($conexao, "INSERT INTO agendamentos(Nome, Telefone, Placa, Servico, DataDesejada, Mensagem)
         VALUES ('$nome', '$telefone', '$placa', '$servico', '$data', '$mensagem')");
 
     }
