@@ -1,18 +1,18 @@
 <?php
-if(isset($_POST['submit']))
+    if(isset($_POST['submit']))
     {
-    print_r('Nome: ' . $_POST['nome']);
-    print_r('<br>');
-    print_r('Telefone: ' . $_POST['telefone']);
-    print_r('<br>');
-    print_r('Placa: '. $_POST['placa']);
-    print_r('<br>');
-    print_r('Serviços: ' . $_POST['servico']);
-    print_r('<br>');
-    print_r('Data desejada: ' . $_POST['data']);
-    print_r('<br>');
-    print_r('Obs: ' . $_POST['mensagem']);
-    print_r('<br>');
+        include_once('config.php');
+
+        $nome = $_POST['nome'];
+        $telefone = $_POST['telefone'];
+        $placa = $_POST['placa'];
+        $servico = $_POST['servico'];
+        $data = $_POST['data'];
+        $mensagem = $_POST['mensagem'];
+
+        $result = mysqli_query($conexao, "INSERT INTO agendamentos(nome,telefone,placa,servico,data,mensagem)
+        VALUES ('$nome', '$telefone', '$placa', '$servico', '$data', '$mensagem')");
+
     }
 ?>
 
