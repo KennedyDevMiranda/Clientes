@@ -3,18 +3,33 @@
     {
         include_once('config.php');
 
-        $nome = $_POST['Nome'];
-        $telefone = $_POST['Telefone'];
-        $placa = $_POST['Placa'];
-        $servico = $_POST['Servico'];
-        $data = $_POST['DataDesejada'];
-        $mensagem = $_POST['Mensagem'];
-        $data = $_POST['DataRegistro'];
-        $mensagem = $_POST['Status'];
+        // Pega os campos do formulário (usando os name minúsculos)
+        $nome     = $_POST['nome'] ?? '';
+        $telefone = $_POST['telefone'] ?? '';
+        $placa    = $_POST['placa'] ?? '';
+        $servico  = $_POST['servico'] ?? '';
+        $data     = $_POST['data'] ?? '';          // vem como YYYY-MM-DD
+        $mensagem = $_POST['mensagem'] ?? '';
 
-        $result = mysqli_query($conexao, "INSERT INTO agendamentos(Nome, Telefone, Placa, Servico, DataDesejada, Mensagem)
-        VALUES ('$nome', '$telefone', '$placa', '$servico', '$data', '$mensagem')");
+        // Validação básica
+        if(trim($nome) === '' || trim($telefone) === ''){
+            die("Nome e Telefone são obrigatórios.");
+        }
 
+        // Monta a query - cuidado: isso aqui é a versão simples (sem prepared)
+        $sql = "INSERT INTO agendamentos (Nome, Telefone, Placa, Servico, DataDesejada, Mensagem)
+                VALUES ('$nome', '$telefone', '$placa', '$servico', '$data', '$mensagem')";
+
+        $result = mysqli_query($conexao, $sql);
+
+        if(!$result){
+            die("Erro ao salvar: " . mysqli_error($conexao));
+        } else {
+            // só pra testar:
+            // echo "Agendamento salvo com sucesso!";
+            header("Location: index.php?sucesso=1");
+            exit;
+        }
     }
 ?>
 
@@ -132,44 +147,44 @@
                 <form action="index.php" method="POST" class="form-contato">
                     <div class="campo-form">
                         <label for="nome">Nome*</label>
-                        <input type="text" id="nome" required>
+                        <input type="text" id="nome" name="nome" required>
                     </div>
 
                     <div class="campo-form">
                         <label for="telefone">Telefone / WhatsApp*</label>
-                        <input type="tel" id="telefone" required>
+                        <input type="tel" id="telefone" name="telefone" required>
                     </div>
 
                     <div class="campo-form">
                         <label for="placa">Placa do veículo</label>
-                        <input type="text" id="placa" placeholder="ABC-1234">
+                        <input type="text" id="placa" name="placa" placeholder="ABC-1234">
                     </div>
 
                     <div class="campo-form">
                         <label for="servico">Serviço desejado</label>
-                        <select id="servico">
+                        <select id="servico" name="servico">
                             <option value="">Selecione...</option>
-                            <option>Revisão completa</option>
-                            <option>Freios</option>
-                            <option>Suspensão</option>
-                            <option>Injeção eletrônica</option>
-                            <option>Ar-condicionado</option>
-                            <option>Elétrica</option>
-                            <option>Outro</option>
+                            <option value="Revisão completa">Revisão completa</option>
+                            <option value="Freios">Freios</option>
+                            <option value="Suspensão">Suspensão</option>
+                            <option value="Injeção eletrônica">Injeção eletrônica</option>
+                            <option value="Ar-condicionado">Ar-condicionado</option>
+                            <option value="Elétrica">Elétrica</option>
+                            <option value="Outro">Outro</option>
                         </select>
                     </div>
 
                     <div class="campo-form">
                         <label for="data">Data desejada</label>
-                        <input type="date" id="data">
+                        <input type="date" id="data" name="data">
                     </div>
 
                     <div class="campo-form">
                         <label for="mensagem">Observações</label>
-                        <textarea id="mensagem" rows="4" placeholder="Descreva o problema ou o que você precisa."></textarea>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva o problema ou o que você precisa."></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-principal">Enviar pedido</button>
+                    <button type="submit" name="submit" class="btn btn-principal">Enviar pedido</button>
                 </form>
 
                 <div class="contato-info">
